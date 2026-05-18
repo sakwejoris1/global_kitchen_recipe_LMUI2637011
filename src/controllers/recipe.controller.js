@@ -1,14 +1,12 @@
 import { recipeService } from '../services/recipe.service.js';
 
-// GET /recipes  - optional ?category= query param
+// GET /recipes
 const getAllRecipes = async (req, res, next) => {
     try {
         const { category } = req.query;
         const recipes = await recipeService.getAllRecipes(category);
         res.status(200).json({
-            success: true,
-            count: recipes.length,
-            data: recipes,
+            success: true,count: recipes.length, data: recipes,
         });
     } catch (err) {
         next(err);
