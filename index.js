@@ -8,7 +8,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// Middleware — parse incoming JSON bodies
+// Middleware  parse incoming JSON bodies
 app.use(express.json());
 
 // Routes
@@ -19,7 +19,7 @@ app.use((req, res) => {
     res.status(404).json({ success: false, message: 'Route not found' });
 });
 
-// Global error handler — must be last
+// Global error handler - must be last
 app.use(errorHandler);
 
 // Database connection

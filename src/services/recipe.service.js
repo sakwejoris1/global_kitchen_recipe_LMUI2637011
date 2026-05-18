@@ -9,7 +9,7 @@ const validateObjectId = (id) => {
     }
 };
 
-// Retrieve all recipes, with optional category filter
+// get all cooking recipe
 const getAllRecipes = async (category) => {
     const filter = category ? { category } : {};
     const recipes = await Recipe.find(filter);
@@ -23,7 +23,7 @@ const getRecipeById = async (id) => {
     return recipe;
 };
 
-// Create a new recipe — business rule: cookingTime must be a positive number
+// Create a new recipe - business rule  cookingTime must be a positive number
 const createRecipe = async (recipeData) => {
     const { cookingTime } = recipeData;
 
